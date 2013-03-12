@@ -2,13 +2,13 @@
 ## Version .01b
 Yo Simple Filter does simple single category filtering on a set of elements. 
 
-![Example](https://github.com/chrisltd/yo_simple_filter/raw/master/example.gif)
+![Animated Example](https://github.com/chrisltd/yo_simple_filter/raw/master/example.gif)
 
 Just activate the plugin on a properly formatted wrapper element, make sure you have a proper set of filters and you're good to go. Alternatively, you can pass alternate selectors as settings to match your custom HTML structure.
 
 ## Usage Examples
 Simple example
-```
+```html
 <button class="filter" data-filter="">All</button>
 <button class="filter" data-filter=".f-fruit">Fruit</button>
 <button class="filter" data-filter=".f-vegetable">Vegetables</button>
@@ -27,7 +27,7 @@ Simple example
 ```
 
 ## Options
-```
+```js
 'childObject' : '.filter_item',       				// Targets to be filtered
 'filterObject' : '.filter',                		// Next and Previous button tag
 'animate' : true,                          		// Should the filtering be animated
