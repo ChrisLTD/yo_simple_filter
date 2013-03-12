@@ -1,0 +1,25 @@
+<html>
+<head>
+  <title>Example</title>
+  <style>
+  	.filter_item { width: 200px; padding: .25em; text-align: center; color: green; background: #eee; margin-top: 1em; border-radius: 1em; }
+  </style>
+</head>
+<body>
+
+<button class="filter" data-filter="">All</button> <button class="filter" data-filter=".f-fruit">Fruit</button> <button class="filter" data-filter=".f-vegetable">Vegetables</button>
+
+<div id="items">
+	<div class="filter_item f-vegetable">Celery</div>
+	<div class="filter_item f-fruit">Apple</div>
+	<div class="filter_item f-fruit f-vegetable">Tomato</div>
+</div>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<script src="jquery.yosimplefilter.js"></script>
+<script>
+$("#items").YoSimpleFilter();
+</script>
+  
+</body>
+</html>
