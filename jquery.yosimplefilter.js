@@ -20,7 +20,7 @@
 
     // Plugin code
     return this.each(function(index, value) {        
-			wrapper = this;
+			var wrapper = this;
       // Find and make sure there are child objects before continuing
       var childTotal = $(settings.childObject, wrapper).length;
       if(childTotal == 0){
