@@ -1,0 +1,9 @@
+{
+  "name": "yo_simple_filter",
+  "version": ".02",
+  "description": "JQuery plugin to do simple single category filtering on a set of elements",
+  "main": "jquery.yosimplefilter.js",
+  "repository": "https://github.com/ChrisLTD/yo_simple_filter.git",
+  "author": "Chris Johnson",
+  "license": "MIT"
+}

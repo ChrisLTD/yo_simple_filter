@@ -1,5 +1,5 @@
 # Yo Simple Filter
-### Version .01 | By [Chris Johnson](http://chrisltd.com) | https://github.com/ChrisLTD/yo_simple_filter
+### By [Chris Johnson](http://chrisltd.com) | https://github.com/ChrisLTD/yo_simple_filter
 
 Yo Simple Filter does simple single category filtering on a set of elements. 
 
