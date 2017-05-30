@@ -9,26 +9,29 @@
 
     // Create some defaults, extending them with any options that were provided
     var settings = $.extend( {
-      'childObject'  : '.filter_item',  				    // Targets to be filtered
+      'childObject'  : '.filter_item',  				// Targets to be filtered
       'filterObject' : '.filter',                		// Next and Previous button tag
       'animate' : true,                          		// Should the filtering be animated
-      'animationSpeed' : 200,												// Animation speed in milliseconds
+      'animationSpeed' : 200,							// Animation speed in milliseconds
       'initCallback' : function() {},            		// Called if plugin initialized on an object
       'filterCallback' : function() {}           		// Called after a filter is run
     }, options);
 
     // Plugin code
     return this.each(function(index, value) {        
-			var wrapper = this;
-      // Find and make sure there are child objects before continuing
-      var childTotal = $(settings.childObject, wrapper).length;
-      if(childTotal == 0){
-        return;
-      }
-			var childTotal = $(settings.filterObject).length; // make sure there are filters
-      if(childTotal == 0){
-        return;
-      }
+		var wrapper = this;
+		
+		// Find and make sure there are child objects before continuing
+		var childTotal = $(settings.childObject, wrapper).length;
+		if(childTotal == 0){
+			return;
+		}
+		
+		var childTotal = $(settings.filterObject).length; // make sure there are filters
+		if(childTotal == 0){
+			return;
+		}
+		
       settings.initCallback();
 
 			// Bind filter action
@@ -49,17 +52,15 @@
 					);					
 				} else {
 					// Show all items
-					$(settings.childObject, wrapper).hide();
+					$(settings.childObject, wrapper).show();
 					// Hide the ones that don't match the filter
-					$(settings.childObject + ':not("' + filter + '")', wrapper).show();
+					$(settings.childObject + ':not("' + filter + '")', wrapper).hide();
 				}
 				
 				settings.filterCallback();
 			});
-			
 
     });
-
 
   };
 })( jQuery );
