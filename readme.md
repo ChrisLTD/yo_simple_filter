@@ -29,10 +29,11 @@ Simple example
 
 ## Options
 ```js
-'childObject' : '.filter_item',       			// Targets to be filtered
-'filterObject' : '.filter',                		// Elements that do the filtering
-'animate' : true,                          		// Should the filtering be animated
-'animationSpeed' : 200,					// Animation speed in milliseconds
-'initCallback' : function() {},            		// Called if plugin initialized on an object
-'filterCallback' : function() {}           		// Called after a filter is run
+'childObject'  : '.filter_item',	// Targets to be filtered
+'filterObject' : '.filter',			// Elements that do the filtering
+'animate' : false,					// Should the filtering be animated
+'animationSpeed' : 200,				// Animation speed in milliseconds
+'filteringClass' : 'filtering',		// Class applied to wrapper during filter operation
+'initCallback' : function() {},		// Called if plugin initialized on an object
+'filterCallback' : function() {}	// Called after a filter is ru
 ```
