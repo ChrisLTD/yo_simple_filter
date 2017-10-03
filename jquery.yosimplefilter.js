@@ -52,20 +52,20 @@
 				
 				if (settings.animate) {
 					// Show all items					
-					$(settings.childObject, wrapper).fadeOut(settings.animationSpeed,
-						function(){
-							// Hide the ones that don't match the filter
-							$(settings.childObject + filter, wrapper).fadeIn(settings.animationSpeed);	
-						}
-					);					
+					$(settings.childObject, wrapper).fadeOut(settings.animationSpeed, function(){
+						// Hide the ones that don't match the filter
+						$(settings.childObject + filter, wrapper).fadeIn(settings.animationSpeed, function(){
+							$(wrapper).removeClass(settings.filteringClass);
+						});	
+					});					
 				} else {
 					// Show all items
 					$(settings.childObject, wrapper).show();
 					// Hide the ones that don't match the filter
-					$(settings.childObject + ':not("' + filter + '")', wrapper).hide();
+					$(settings.childObject + ':not("' + filter + '")', wrapper).hide(0, function(){
+						$(wrapper).removeClass(settings.filteringClass);
+					});
 				}
-				
-				$(wrapper).removeClass(settings.filteringClass);
 				
 				settings.filterCallback();
 				
