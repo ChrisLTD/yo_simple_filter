@@ -11,9 +11,8 @@
 		var settings = $.extend( {
 			'childObject'  : '.filter_item',	// Targets to be filtered
 			'filterObject' : '.filter',			// Elements that do the filtering
-			'animate' : false,					// Should the filtering be animated
+			'animate' : true,					// Should the filtering be animated
 			'animationSpeed' : 200,				// Animation speed in milliseconds
-			'filteringClass' : 'filtering',		// Class applied to wrapper during filter operation
 			'initCallback' : function() {},		// Called if plugin initialized on an object
 			'filterCallback' : function() {}	// Called after a filter is run
 		}, options);
@@ -41,9 +40,6 @@
 				
 				event.preventDefault();
 				
-				// Add filtering class to wrapper
-				$(wrapper).addClass(settings.filteringClass);
-				
 				// Add active class to selected filter
 				$(settings.filterObject).removeClass("active");
 				$(this).addClass("active");
@@ -51,20 +47,17 @@
 				var filter = $(this).data("filter");
 				
 				if (settings.animate) {
-					// Show all items					
-					$(settings.childObject, wrapper).fadeOut(settings.animationSpeed, function(){
+					// Show the items that match the filter
+					$(settings.childObject + filter, wrapper).fadeIn(settings.animationSpeed, function() {
 						// Hide the ones that don't match the filter
-						$(settings.childObject + filter, wrapper).fadeIn(settings.animationSpeed, function(){
-							$(wrapper).removeClass(settings.filteringClass);
-						});	
-					});					
+						$(settings.childObject + ':not("' + filter + '")', wrapper).fadeOut(settings.animationSpeed);
+					});
 				} else {
 					// Show all items
 					$(settings.childObject, wrapper).show();
+
 					// Hide the ones that don't match the filter
-					$(settings.childObject + ':not("' + filter + '")', wrapper).hide(0, function(){
-						$(wrapper).removeClass(settings.filteringClass);
-					});
+					$(settings.childObject + ':not("' + filter + '")', wrapper).hide();
 				}
 				
 				settings.filterCallback();
