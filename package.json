@@ -1,6 +1,6 @@
 {
   "name": "yo_simple_filter",
-  "version": ".1",
+  "version": "0.1",
   "description": "JQuery plugin to do simple single category filtering on a set of elements",
   "main": "jquery.yosimplefilter.js",
   "repository": "https://github.com/ChrisLTD/yo_simple_filter.git",
